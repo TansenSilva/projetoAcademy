@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="author" content="Mateus Silva Pereira">
+    <link rel="stylesheet" type="text/css"
+          href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript"
+            src="https://kit.fontawesome.com/006642858d.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="img/Academy.JPG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!--<link rel="stylesheet" href="/static/css/styles.css">--> 
+    <link
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap"
+            rel="stylesheet">
+    <title>Projeto Academy</title>
+</head>
+<body>
+
+    <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+    <div class="container" style="margin-top: 50px;">
+        <h3 style="text-align: center;"><i class="fa fa-list-ol" aria-hidden="true" style="font-size: 40px; color: rgb(91, 92, 25);">  </i>   ALUNOS CANCELADOS</h3>
+        <hr>
+        <br>
+        <table class="table table-bordered table-hover-black">
+            <thead class="bg-dark" style="color: white;">
+                <th scope="col">Nome</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Matricula</th>
+                <th scope="col">Status</th>
+                <th scope="col">Turno</th>
+                <th scope="col">Ação</th>
+            </thead>
+
+            <tbody>
+                <tr scope="row" th:each="alunos : ${alunosCancelados}">
+
+                    <td th:text="${alunos.nome}"></td>
+                    <td th:text="${alunos.curso}"></td>
+                    <td th:text="${alunos.matricula}"></td>
+                    <td th:text="${alunos.status}"></td>
+                    <td th:text="${alunos.turno}"></td>
+                    <td>
+                        <a class="btn btn-primary" id="btnTable" th:href="@{alterar/{id}(id=${alunos.id})}">
+                        <i class="fas fa-edit" ></i> Editar</a>
+
+                        <a class="btn btn-danger" id="btnTable" th:href="@{excluir/{id}(id=${alunos.id})}">
+                        <i class="fas fa-times"></i> Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <br>
+    
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

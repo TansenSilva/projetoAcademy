@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="author" content="Mateus Silva Pereira">
+    <link rel="stylesheet" type="text/css"
+          href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript"
+            src="https://kit.fontawesome.com/006642858d.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="img/Academy.JPG">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap"
+            rel="stylesheet">
+    <title>Encontrar Alunos</title>
+</head>
+<body style="background-color: rgb(221, 221, 221);">
+
+    <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+    <div class="container" style="margin-top: 50px;">
+        <h4 style="text-align: center;"><i class="fa fa-search-plus" aria-hidden="true"></i> ENCONTRAR ALUNOS</h4>
+        <br>
+        
+        <h3 style="text-align: center; color: brown; line-break: auto;">Status dos Aluno <i class="fa fa-graduation-cap" aria-hidden="true" style="font-size: 45px;"></i></h3>
+        <br>
+
+            <!-- Alunos Ativos -->
+
+        <div class="row" style="justify-content: center;">
+            <div class="card" style="width: 288px;">
+               <a th:href="@{/alunos-ativos}" ><img id="cursorImg" class="card-img-top" src="img/alunosAtivos.jpg" alt="Alunos Ativos" /></a>
+                <div class="card-body">
+                    <h5 class="card-title" id="filtroFont">Alunos Ativos</h5>
+                    <p class="card-text">Busque por todos os alunos que estão ativos no sistema.</p>
+                    <a th:href="@{/alunos-ativos}" class="btn btn-outline-primary">Clique Aqui</a>
+                </div>
+            </div>
+
+            <!-- Alunos Inativos -->
+
+            <div class="card ml-3" style="width: 288px; ">
+                <a th:href="@{/alunos-inativos}"><img id="cursorImg" class="card-img-top" src="img/alunosInativos.jpg" style="height: 214px;" alt="Alunos Ativos" /></a>
+                <div class="card-body">
+                    <h5 class="card-title" id="filtroFont">Alunos Inativos</h5>
+                  
+                    <p class="card-text">Busque por todos os alunos que estão Inativos no sistema.</p>
+                    <a th:href="@{/alunos-inativos}" class="btn btn-outline-primary">Clique Aqui</a>
+                </div>
+            </div>
+
+             <!-- Alunos CANCELADO -->
+
+             <div class="card ml-3" style="width: 288px; ">
+                <a th:href="@{/alunos-cancelados}"><img id="cursorImg" class="card-img-top" src="img/canceladosd.jpeg" style="height: 214px;" alt="Alunos Ativos" /></a>
+                <div class="card-body">
+                    <h5 class="card-title" id="filtroFont">Alunos Cancelados</h5>
+                  
+                    <p class="card-text">Busque por todos os alunos que estão Cancelados no sistema.</p>
+                    <a th:href="@{/alunos-cancelados}" class="btn btn-outline-primary">Clique Aqui</a>
+                </div>
+            </div>
+
+            <!-- Alunos Trancados -->
+
+            <div class="card mt-3" style="width: 288px; margin-right: 610px;">
+               <a th:href="@{/alunos-trancados}"><img id="cursorImg" class="card-img-top" src="img/trancados.jpg" style="height: 214px;" alt="Alunos Ativos" /></a>
+                <div class="card-body">
+                    <h5 class="card-title" id="filtroFont">Alunos Trancados</h5>
+                  
+                    <p class="card-text">Busque por todos os alunos que estão Trancados no sistema.</p>
+                    <a th:href="@{/alunos-trancados}" class="btn btn-outline-primary">Clique Aqui</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        
+
+    </div>
+
+</body>
+</html>
